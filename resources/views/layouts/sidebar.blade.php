@@ -19,6 +19,13 @@
           </ul>
           </li>
           <li class="menu-title">Administración</li>
+          <li class="has_sub"><a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i> <span>Ordenes de trabajo (OT)</span><span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+            <ul
+              class="list-unstyled">
+              <li><a href="{{url('/admin/ordenes/create')}}">Nueva OT</a></li>
+              <li><a href="{{url('/admin/ordenes')}}">Lista de OT</a></li>
+              </ul>
+          </li>
           <li class="has_sub"><a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i> <span>Categorias de servicios</span><span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
             <ul
               class="list-unstyled">

@@ -37,6 +37,7 @@ Route::middleware(['auth'])->group(function(){
             Route::resource('/usuarios','Admin\AdministradoresController');
             Route::resource('/categorias','Admin\CategoriasController');
             Route::resource('/clientes','Admin\ClientesController');
+            Route::resource('/ordenes', 'Admin\OrdenesController');
             Route::post('/conductores/nuevo','Admin\ClientesController@nuevoConductor');
             Route::put('/conductores/{id}','Admin\ClientesController@editarConductor');
             Route::get('/conductores/{id}/edit','Admin\ClientesController@formEditarConductor');
