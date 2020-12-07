@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePreguntasTable extends Migration
+class CreateDocumentosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,17 @@ class CreatePreguntasTable extends Migration
      */
     public function up()
     {
-        Schema::create('preguntas', function (Blueprint $table) {
+        Schema::create('documentos', function (Blueprint $table) {
             $table->id();
-            $table->integer('checklist_id')->unsigned();
+            $table->integer('orden_id')->unsigned();
             $table->string('nombre');
-            $table->boolean('importancia');
-            $table->boolean('estado')->defaul('true');
+            $table->text('descripcion')->nullable();
+            $table->string('archivo');
+            $table->boolean('estado')->default(1);
             $table->timestamps();
         });
-        Schema::table('preguntas', function($table) {
-            $table->foreign('checklist_id')->references('id')->on('checklists');
+        Schema::table('documentos', function($table) {
+            $table->foreign('orden_id')->references('id')->on('ordenes');
         });
     }
 
@@ -33,6 +34,6 @@ class CreatePreguntasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('preguntas');
+        Schema::dropIfExists('documentos');
     }
 }

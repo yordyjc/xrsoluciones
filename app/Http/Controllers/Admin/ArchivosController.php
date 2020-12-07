@@ -4,12 +4,17 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Hash;
 use Illuminate\Support\Facades\Validator;
-use App\User;
-use App\Models\Orden;
-use App\Models\Categoria;
+use Response;
+use File;
+use Carbon\Carbon;
+use Auth;
 
-class OrdenesController extends Controller
+use App\User;
+use App\Models\Documento;
+
+class ArchivosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +23,7 @@ class OrdenesController extends Controller
      */
     public function index()
     {
-        $ordenes = Orden::orderBy('id', 'desc')->get();
-        return view('admin.ordenes.index')->with('ordenes',$ordenes);
+        //
     }
 
     /**
@@ -27,10 +31,14 @@ class OrdenesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function frmNuevoArchivo($id)
+    {
+        return view('admin.archivos.crear')->with('orden',$id);
+    }
+
     public function create()
     {
-        $tipo = Categoria::all()->where('estado',1)->pluck('nombre','id');
-        return view('admin.ordenes.crear')->with('tipo',$tipo);
+        //
     }
 
     /**
@@ -43,44 +51,40 @@ class OrdenesController extends Controller
     {
         $messages = [
             'required' => 'El campo :attribute es requerido.',
-            'string' => 'El campo :attribute debe ser texto'
+            'string' => 'El campo :attribute debe ser texto',
+            'numeric' => 'El campo :attribute debe ser un número'
         ];
         $validator = Validator::make($request->all(),[
-            'nombres' => 'string | required',
-            'email' => 'string|email|max:255|unique:users',
-            'doc' => 'string',
-            'tipo' => 'required',
-            'horometro' => 'required',
-            'kilometraje' => 'required',
-            'entrega' => 'required'
-        ],$messages);
+            'nombre' => 'required',
+            'descripcion' => 'string',
+            'archivo' => 'required | file | max:5120'
+        ], $messages);
+
         if ($validator->fails()) {
             alert()->error('Ups!','La operación no pudo ser completada')->autoClose(4000)->showCloseButton();
-            return redirect('/admin/ordenes/create')
+            return redirect('/admin/servicio/'.$request->orden)
                 ->withErrors($validator)
                 ->withInput();
         }
-        $cliente = new User();
-        $cliente->tipo = 3;
-        $cliente->nombres = $request->nombres;
-        $cliente->email = $request->email;
-        $cliente->doc = $request->doc;
-        $cliente->direccion = $request->direccion;
-        $cliente->cel = $request->cel;
-        $cliente->password = bcrypt('12345678');
-        $cliente->save();
-        $ultimocliente = User::orderBy('id','desc')->first();
-        //registro de nueva orden
-        $orden = new Orden();
-        $orden->cliente_id = $ultimocliente->id;
-        $orden->categoria_id = $request->tipo;
-        $orden->horometro = $request->horometro;
-        $orden->kilometraje = $request->kilometraje;
-        $orden->entrega = $request->entrega;
-        $orden->save();
-        alert()->success('¡Yeah!','Operación realizada con éxito')->autoClose(3000)->showCloseButton();
-        return redirect('/admin/ordenes');
 
+        $documento = new Documento();
+        $documento->orden_id = $request->orden;
+        $documento->nombre = $request->nombre;
+        $documento->descripcion = $request->descripcion;
+        $archivo = $request->archivo;
+        if(!is_null($archivo))
+        {
+            // $subnombre= str_replace(' ', '-',strtolower($request->placa.' '.$request->horometro));
+            $extension= $archivo->getClientOriginalExtension();
+            // $nombre = $subnombre.'.'.$extension;
+            $nombre = time().'.'.$extension;
+            $path = public_path().'/assets/images/documentos/';
+            $archivo->move($path,$nombre);
+            $documento->archivo = '/assets/images/documentos/'.$nombre;
+        }
+        $documento->save();
+        alert()->success('¡Yeah!','Operación realizada con éxito')->autoClose(3000)->showCloseButton();
+        return redirect('/admin/ordenes/'.$request->orden);
     }
 
     /**
@@ -91,8 +95,7 @@ class OrdenesController extends Controller
      */
     public function show($id)
     {
-        $orden = Orden::find($id);
-        return view('admin.ordenes.ver')->with('orden',$orden);
+        //
     }
 
     /**

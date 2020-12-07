@@ -34,6 +34,11 @@ Route::middleware(['auth'])->group(function(){
                 return redirect('/admin/servicios');
             });
             Route::resource('/servicios','Admin\ServiciosController');
+            Route::get('/servicio/{id}','Admin\ServiciosController@frmNuevoServicio');
+            Route::resource('/checklist','Admin\ChecklistController');
+            Route::get('/archivo/{id}','Admin\ArchivosController@frmNuevoArchivo');
+            Route::resource('/archivos','Admin\ArchivosController');
+            Route::get('/checklists/camioneta/{id}','Admin\ChecklistController@frmCamioneta');
             Route::resource('/usuarios','Admin\AdministradoresController');
             Route::resource('/categorias','Admin\CategoriasController');
             Route::resource('/clientes','Admin\ClientesController');

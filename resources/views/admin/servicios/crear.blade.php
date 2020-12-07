@@ -6,8 +6,10 @@ Mantenimiento de flota
 @section('content')
 <div class="card-body">
 	<h4 class="mt-0 header-title">Datos iniciales</h4>
-	<form action="{{url('/admin/servicios')}}" method="post" enctype="multipart/form-data">
+	<form action="{{url('/admin/checklist')}}" method="post" enctype="multipart/form-data">
 		@csrf
+        <input type="hidden" id="orden" name="orden" value="{{$orden}}" >
+        <input type="hidden" id="tipo" name="tipo" value="1" >
 		<div class="form-group row {{ $errors->has('placa') ? ' has-warning' : '' }}">
             <label for="example-text-input" class="col-sm-4 col-form-label" for="placa">
                 Placa

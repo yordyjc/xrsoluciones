@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateServiciosTable extends Migration
+class CreatechecklistsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateServiciosTable extends Migration
      */
     public function up()
     {
-        Schema::create('servicios', function (Blueprint $table) {
+        Schema::create('checklists', function (Blueprint $table) {
             $table->id();
+            $table->integer('tipo');
+            $table->integer('orden_id')->unsigned();
             $table->string('placa');
             $table->string('operacion');
             $table->string('operador');
@@ -240,6 +242,10 @@ class CreateServiciosTable extends Migration
             $table->boolean('activo')->default(true);
             $table->timestamps();
         });
+
+        Schema::table('checklists', function($table) {
+            $table->foreign('orden_id')->references('id')->on('ordenes');
+        });
     }
 
     /**
@@ -249,6 +255,6 @@ class CreateServiciosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('servicios');
+        Schema::dropIfExists('checklists');
     }
 }

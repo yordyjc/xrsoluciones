@@ -33,13 +33,7 @@
               <li><a href="{{url('/admin/categorias')}}">Lista de categorias</a></li>
               </ul>
           </li>
-          <li class="has_sub"><a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-arrow-down"></i><span> Check list - Mantenimiento </span><span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-            <ul
-              class="list-unstyled">
-              <li><a href="{{url('/admin/servicios/create')}}">Nuevo</a></li>
-              <li><a href="{{url('/admin/servicios')}}">Lista de servicios</a></li>
-              </ul>
-          </li>
+
           <li class="has_sub"><a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-arrow-down"></i><span> Clientes </span><span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
             <ul
               class="list-unstyled">
