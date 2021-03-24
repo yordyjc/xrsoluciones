@@ -11,7 +11,7 @@ Nuevo servicio
         <input type="hidden" id="orden" name="orden" value="{{$orden}}" >
 		<div class="form-group row {{ $errors->has('nombre') ? ' has-warning' : '' }}">
             <label for="example-text-input" class="col-sm-4 col-form-label" for="nombre">
-                Nombres
+                Servicio a realizar
             </label>
             <div class="col-sm-8">
             	<input class="form-control {{ $errors->has('nombre') ? ' form-control-warning' : '' }}" type="text" id="nombre" name="nombre" value="{{old('nombre')}}" >
@@ -25,14 +25,28 @@ Nuevo servicio
 
         <div class="form-group row {{ $errors->has('descripcion') ? ' has-warning' : '' }}">
             <label for="example-text-input" class="col-sm-4 col-form-label" for="descripcion">
-                Descripción
+                Descripción 1
             </label>
             <div class="col-sm-8">
-            	<input class="form-control {{ $errors->has('descripcion') ? ' form-control-warning' : '' }}" type="text" id="descripcion" name="descripcion" value="{{old('descripcion')}}">
+                <textarea  rows="5" class="form-control {{ $errors->has('descripcion') ? ' form-control-danger' : '' }}" id="descripcion" name="descripcion">{{ old('descripcion') }}</textarea>
                 @if ($errors->has('descripcion'))
-                    <div class="col-form-label">
-                        {{ $errors->first('descripcion') }}
-                    </div>
+                <div class="col-form-label">
+                    {{ $errors->first('descripcion') }}
+                </div>
+                @endif
+            </div>
+        </div>
+
+        <div class="form-group row {{ $errors->has('descripcion2') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="descripcion2">
+                Descripción 2
+            </label>
+            <div class="col-sm-8">
+                <textarea  rows="5" class="form-control {{ $errors->has('descripcion2') ? ' form-control-danger' : '' }}" id="descripcion2" name="descripcion2">{{ old('descripcion2') }}</textarea>
+                @if ($errors->has('descripcion2'))
+                <div class="col-form-label">
+                    {{ $errors->first('descripcion2') }}
+                </div>
                 @endif
             </div>
         </div>
@@ -46,6 +60,20 @@ Nuevo servicio
                 @if ($errors->has('precio'))
                     <div class="col-form-label">
                         {{ $errors->first('precio') }}
+                    </div>
+                @endif
+            </div>
+        </div>
+
+        <div class="form-group row {{ $errors->has('materiales') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="materiales">
+                Materiales
+            </label>
+            <div class="col-sm-8">
+                {!! Form::select('materiales',$materiales,old('materiales'),["class"=>"sector form-control form-control-round fill select2 ",'placeholder' => '-- Materiales --',"required"=>"","id"=>"materiales"]) !!}
+                @if ($errors->has('materiales'))
+                    <div class="col-form-label">
+                        {{ $errors->first('materiales') }}
                     </div>
                 @endif
             </div>

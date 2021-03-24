@@ -18,6 +18,7 @@ class CreateServiciosTable extends Migration
             $table->integer('orden_id')->unsigned();
             $table->string('nombre');
             $table->text('descripcion')->nullable();
+            $table->text('descripcion2')->nullable();
             $table->float('precio')->nullable()->default(0);
             $table->boolean('estado')->default(1);
             $table->timestamps();

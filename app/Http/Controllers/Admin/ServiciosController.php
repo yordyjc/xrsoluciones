@@ -13,6 +13,7 @@ use Auth;
 
 use App\User;
 use App\Models\Servicio;
+use App\Models\Material;
 
 class ServiciosController extends Controller
 {
@@ -39,7 +40,10 @@ class ServiciosController extends Controller
 
     public function frmNuevoServicio($id)
     {
-        return view('admin.trabajos.crear')->with('orden',$id);
+        $materiales = Material::all()->pluck('nombre','id');
+        return view('admin.trabajos.crear')
+            ->with('orden',$id)
+            ->with('materiales', $materiales);
     }
     public function obtener()
     {
