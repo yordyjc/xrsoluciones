@@ -56,6 +56,7 @@ Route::middleware(['auth'])->group(function(){
 
             //reportes
             Route::get('/reporte/{id}','Admin\ReportesController@CheckList');
+            Route::get('/reportes/orden/{id}','Admin\ReportesController@ordenServicio');
         });
     });
 });

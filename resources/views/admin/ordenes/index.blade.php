@@ -43,9 +43,8 @@ function concatenar($numero){
 	              <th>Tipo de servicio</th>
 	              <th>Fecha de entrega</th>
 	              <th>Check List</th>
-                  <th>Agregados</th>
 	              <th>Servicios</th>
-                  <th>Informe</th>
+                  <th>Reporte de servicios</th>
                   <th>Estado</th>
                   <th>Acciones</th>
 	            </tr>
@@ -63,15 +62,7 @@ function concatenar($numero){
                             <td>
                                 @if(count($orden->checklists) >0 )
                                     @foreach($orden->checklists as $checklist)
-                                        <p>{{$checklist->tipo}}</p>
-                                    @endforeach
-                                @endif
-                            </td>
-
-                            <td>
-                                @if(count($orden->documentos) >0 )
-                                    @foreach($orden->documentos as $documentos)
-                                        <p>{{$documentos->nombre}}</p>
+                                        <p>Checklist de camioneta</p>
                                     @endforeach
                                 @endif
                             </td>
@@ -85,7 +76,7 @@ function concatenar($numero){
                             </td>
 
                             <td>
-                                <a href="#">
+                                <a href="{{url('admin/reportes/orden/'.$orden->id)}}">
                                     <i class="feather icon-download f-w-600 icon-negro" data-toggle="tooltip" data-placement="left" data-original-title="Generar informe"></i>
                                 </a>
                             </td>

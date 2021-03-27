@@ -203,6 +203,7 @@ function concatenar($numero){
                                         <th>nombre</th>
                                         <th>Descricpión</th>
                                         <th>Precio</th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -217,6 +218,14 @@ function concatenar($numero){
                                             {{$servicio->descripcion}}
                                         </td>
                                         <td>{{$servicio->precio}}</td>
+                                        <td>
+                                        <a href="{{url('admin/servicios/'.$servicio->id.'/edit')}}">
+                                            <i class="icon feather icon-edit f-w-600 icon-azul" data-toggle="tooltip" data-placement="left" data-original-title="Cambiar estado"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="icon feather icon-trash-2 f-w-600 icon-rojo" data-toggle="tooltip" data-placement="left" data-original-title="Eliminar"></i>
+                                        </a>
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -235,7 +244,6 @@ function concatenar($numero){
             </div>
         </div>
     </div>
-
 
 @endsection
 

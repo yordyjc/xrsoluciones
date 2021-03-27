@@ -476,7 +476,11 @@ class ServiciosController extends Controller
      */
     public function edit($id)
     {
-
+        $materiales = Material::all()->pluck('nombre','id');
+        $servicio = Servicio::find($id);
+        return view('admin.trabajos.editar')
+            ->with('servicio',$servicio)
+            ->with('materiales',$materiales);
     }
 
     /**
@@ -488,7 +492,47 @@ class ServiciosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $messages = [
+            'required' => 'El campo :attribute es requerido.',
+            'string' => 'El campo :attribute debe ser texto',
+            'numeric' => 'El campo :attribute debe ser un número'
+        ];
+        $validator = Validator::make($request->all(),[
+            'nombre' => 'required',
+            'descripcion' => 'string',
+            'descripcion2' => 'string',
+            'precio' => 'numeric'
+        ], $messages);
+
+        if ($validator->fails()) {
+            alert()->error('Ups!','La operación no pudo ser completada')->autoClose(4000)->showCloseButton();
+            return redirect('/admin/servicio/'.$id.'/edit')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $servicio = Servicio::find($id);
+        $servicio->estado = $request->estado;
+        $servicio->nombre = $request->nombre;
+        $servicio->descripcion = $request->descripcion;
+        $servicio->descripcion2 = $request->descripcion2;
+        $servicio->precio = $request->precio;
+        $servicio->save();
+
+        if($request->materiales_selected)
+        {
+            $ultimoservicio = Servicio::orderBy('id','desc')->first();
+            $materiales = explode(',', $request->materiales_selected);
+            foreach($materiales as $key=>$value)
+            {
+                if($value != "")
+                $ultimoservicio->materiales()->attach($value);
+
+            }
+        }
+
+        alert()->success('¡Yeah!','Operación realizada con éxito')->autoClose(3000)->showCloseButton();
+        return redirect('/admin/ordenes/'.$servicio->orden_id);
     }
 
     /**

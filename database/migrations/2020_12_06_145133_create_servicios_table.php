@@ -20,7 +20,8 @@ class CreateServiciosTable extends Migration
             $table->text('descripcion')->nullable();
             $table->text('descripcion2')->nullable();
             $table->float('precio')->nullable()->default(0);
-            $table->boolean('estado')->default(1);
+            $table->boolean('estado')->default(0);
+            $table->boolean('activo')->default(0);
             $table->timestamps();
         });
         Schema::table('servicios', function($table) {
