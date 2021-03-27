@@ -106,7 +106,7 @@ function concatenar($numero){
                                     <i class="icon feather icon-external-link f-w-600 icon-azul" data-toggle="tooltip" data-placement="left" data-original-title="ver detalles"></i>
                                 </a>
 
-                                <a href="#">
+                                <a href="{{url('/admin/ordenes/'.$orden->id.'/edit')}}">
                                     <i class="feather icon-edit f-w-600 icon-azul" data-toggle="tooltip" data-placement="left" data-original-title="Editar"></i>
                                 </a>
 

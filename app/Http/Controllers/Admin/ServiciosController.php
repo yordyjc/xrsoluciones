@@ -66,6 +66,7 @@ class ServiciosController extends Controller
         $validator = Validator::make($request->all(),[
             'nombre' => 'required',
             'descripcion' => 'string',
+            'descripcion2' => 'string',
             'precio' => 'numeric'
         ], $messages);
 
@@ -80,8 +81,22 @@ class ServiciosController extends Controller
         $servicio->orden_id = $request->orden;
         $servicio->nombre = $request->nombre;
         $servicio->descripcion = $request->descripcion;
+        $servicio->descripcion2 = $request->descripcion2;
         $servicio->precio = $request->precio;
         $servicio->save();
+
+        if($request->materiales_selected)
+        {
+            $ultimoservicio = Servicio::orderBy('id','desc')->first();
+            $materiales = explode(',', $request->materiales_selected);
+            foreach($materiales as $key=>$value)
+            {
+                if($value != "")
+                $ultimoservicio->materiales()->attach($value);
+
+            }
+        }
+
         alert()->success('¡Yeah!','Operación realizada con éxito')->autoClose(3000)->showCloseButton();
         return redirect('/admin/ordenes/'.$request->orden);
         // $messages = [
@@ -496,5 +511,30 @@ class ServiciosController extends Controller
         $servicio = Servicio::where('id',$id)->first();
         return view('admin.servicios.ver')->with('servicio',$servicio);
 
+    }
+
+    //Agregar materiale desde el formulario de servicios
+    public function crearMateriales(Request $request)
+    {
+        if($request->ajax()){
+            $messages = [
+                'required' => 'El campo :attribute es requerido.',
+                'string' => 'El campo :attribute debe ser texto',
+                'numeric' => 'El campo :attribute debe ser un número'
+            ];
+            $validator = Validator::make($request->all(),[
+                'material' => 'required',
+            ], $messages);
+
+            if ($validator->fails()) {
+                return response()->json($validator->errors(), 422);
+            }
+
+            $material = new Material();
+            $material->nombre = $request->material;
+            $material->save();
+            $lista_materiales = Material::orderBy('id','desc')->get();
+            return $lista_materiales;
+        }
     }
 }

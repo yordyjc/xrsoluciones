@@ -15,14 +15,14 @@ Nueva orden de trabajo
             <div class="col-md-8 form-radio">
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="estado" id="estado" value="1" checked="checked">
-                    <i class="helper"></i>Activo
+                    <input type="radio" name="estado" id="estado" value="0" checked="checked">
+                    <i class="helper"></i>En proceso
                     </label>
                 </div>
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="estado" id="estado" value="0">
-                    <i class="helper"></i>Suspendido
+                    <input type="radio" name="estado" id="estado" value="1">
+                    <i class="helper"></i>Concluido
                     </label>
                 </div>
             </div>

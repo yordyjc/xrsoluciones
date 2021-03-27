@@ -51,6 +51,9 @@ Route::middleware(['auth'])->group(function(){
             Route::get('/servicios/ver-servicio/{id}','Admin\ServiciosController@verServicio');
             Route::get('ver/{id}','Admin\ServiciosController@hola');
 
+            //materiales
+            Route::post('/materiales', 'Admin\ServiciosController@crearMateriales');
+
             //reportes
             Route::get('/reporte/{id}','Admin\ReportesController@CheckList');
         });

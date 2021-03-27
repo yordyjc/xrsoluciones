@@ -58,20 +58,35 @@
                             "fog"
                         ],
                         i;
-    
+
                     for(i = list.length; i--; )
                     icons.set(list[i], list[i]);
                     icons.play();
                 };
-    
+
             // scroll
-    
+
             $(document).ready(function() {
-            
+
             $("#boxscroll").niceScroll({cursorborder:"",cursorcolor:"#cecece",boxzoom:true});
-            $("#boxscroll2").niceScroll({cursorborder:"",cursorcolor:"#cecece",boxzoom:true}); 
-            
+            $("#boxscroll2").niceScroll({cursorborder:"",cursorcolor:"#cecece",boxzoom:true});
+
             });
+  </script>
+  <script>
+    function sendRequest(url,data,method,cb) {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        opts={};
+        opts.url=url;
+        if (data) opts.data=data;
+        opts.method=method;
+        opts.complete=cb;
+        $.ajax(opts);
+    }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
 @include('sweetalert::alert')

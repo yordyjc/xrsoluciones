@@ -91,25 +91,27 @@ function concatenar($numero){
                                 </tr>
                             </thead>
                             <tbody>
+                                @if($orden->checklists->count() >0)
                                 @foreach($orden->checklists as $checklist)
-                                <tr>
-                                    <td>{{concatenar($checklist->id)}}</td>
-                                    <td>
-                                        Administrador
-                                        <p class="text-muted m-b-0">Registrado el {{ Carbon::parse($checklist->created_at)->format('d/m/Y h:i a') }}</p>
-                                    </td>
-                                    <td>
-                                    @switch($checklist->tipo)
-                                        @case (1)
-                                        <span class="badge badge-warning" style="color:#fff;">Camioneta</span>
-                                        @break
-                                    @endswitch
-                                    </td>
-                                    <td>{{$checklist->placa}}</td>
-                                    <td>{{$checklist->operacion}}</td>
-                                    <td>{{$checklist->operador}}</td>
-                                </tr>
+                                    <tr>
+                                        <td>{{concatenar($checklist->id)}}</td>
+                                        <td>
+                                            Administrador
+                                            <p class="text-muted m-b-0">Registrado el {{ Carbon::parse($checklist->created_at)->format('d/m/Y h:i a') }}</p>
+                                        </td>
+                                        <td>
+                                        @switch($checklist->tipo)
+                                            @case (1)
+                                            <span class="badge badge-warning" style="color:#fff;">Camioneta</span>
+                                            @break
+                                        @endswitch
+                                        </td>
+                                        <td>{{$checklist->placa}}</td>
+                                        <td>{{$checklist->operacion}}</td>
+                                        <td>{{$checklist->operador}}</td>
+                                    </tr>
                                 @endforeach
+                                @endif
                             </tbody>
                         </table>
                         </br>
@@ -209,7 +211,7 @@ function concatenar($numero){
                                         <td>{{concatenar($servicio->id)}}</td>
                                         <td>
                                             {{$servicio->nombre}}
-                                            <p class="text-muted m-b-0">Registrado el {{ Carbon::parse($checklist->created_at)->format('d/m/Y h:i a') }}</p>
+                                            <p class="text-muted m-b-0">Registrado el {{ Carbon::parse($servicio->created_at)->format('d/m/Y h:i a') }}</p>
                                         </td>
                                         <td>
                                             {{$servicio->descripcion}}
@@ -221,10 +223,10 @@ function concatenar($numero){
                             </table>
                             </br>
                             <div class="form-group row">
-                                <div class="col-md-12">
-                                <a href="{{ url('/admin/servicio/'.$orden->id) }}" class="btn btn-outline-primary waves-effect waves-light btn-lg"><i class="typcn typcn-document-add"></i>Agregar servicio</a>
-
+                                <div class="col-md-8">
+                                    <a href="{{ url('/admin/servicio/'.$orden->id) }}" class="btn btn-outline-primary waves-effect waves-light btn-lg"><i class="typcn typcn-document-add"></i>Agregar servicio</a>
                                 </div>
+
                             </div>
 
                         </div>

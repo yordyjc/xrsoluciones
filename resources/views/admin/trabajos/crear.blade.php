@@ -3,7 +3,6 @@
 Nuevo servicio
 @endsection
 
-
 @section('content')
 <div class="card-body">
 	<form action="{{url('/admin/servicios')}}" method="post" enctype="multipart/form-data">
@@ -69,14 +68,23 @@ Nuevo servicio
             <label for="example-text-input" class="col-sm-4 col-form-label" for="materiales">
                 Materiales
             </label>
-            <div class="col-sm-8">
-                {!! Form::select('materiales',$materiales,old('materiales'),["class"=>"sector form-control form-control-round fill select2 ",'placeholder' => '-- Materiales --',"required"=>"","id"=>"materiales"]) !!}
+            <div class="col-sm-6">
+                {!! Form::select('materiales',$materiales,old('materiales'),["class"=>"sector form-control form-control-round fill select2 ","required"=>"","id"=>"materiales"]) !!}
+                <br>
+                <br>
+                <div id="tags">
+                </div>
                 @if ($errors->has('materiales'))
                     <div class="col-form-label">
                         {{ $errors->first('materiales') }}
                     </div>
                 @endif
+
             </div>
+            <div class="col-sm-2">
+                <a class="btn btn-primary btn-lg" href="#" onclick="crearModal()"data-toggle="modal" data-target="#crearModal">+</a>
+            </div>
+            <input class="form-control {{ $errors->has('nombre') ? ' form-control-warning' : '' }}" type="hidden" id="materiales_selected" name="materiales_selected">
         </div>
 
         <br>
@@ -96,6 +104,40 @@ Nuevo servicio
             </div>
         </div>
 	</form>
+    <div class="modal fade" id="crearModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Agregar material</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="{{url('admin/materiales')}}" id="form-submit" onsubmit="return false;" method="post">
+                        @csrf
+                        <div class="modal-body">
+                            <div class="form-group row">
+                                <label for="example-text-input" class="col-sm-4 col-form-label" for="materiales">
+                                    Material
+                                </label>
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="text" id="material" name="material">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="icofont icofont-ui-delete"></i>Agregar
+                            </button>
+                            <button class="btn btn-danger" data-dismiss="modal">
+                                <i class="icofont icofont-circled-left"></i> Cancelar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 </div>
 
 @endsection
@@ -109,5 +151,53 @@ Nuevo servicio
     $( ".select2" ).select2({
         theme: "bootstrap4"
     });
+</script>
+<script>
+    $(document).ready(function(){
+        $('#materiales').on('change',function(){
+            tagMaterial();
+        });
+    });
+
+    $('#form-submit').submit(function(e){
+        e.preventDefault();
+        var route = $('#form-submit').attr('action');
+        var method = $('#form-submit').attr('method');
+        var frmData = $('#form-submit').serialize();
+        sendRequest(route, frmData, method, function(data, textStatus){
+            if(data.status == 200){
+                $("#crearModal").modal('hide');
+                swal({
+                    title: "Operación realizada con éxito",
+                    type:  "success",
+                    button: "Cerrar",
+                    timer: "3000",
+                    backdrop: "rgba(165, 220, 134, 0.45)"
+                });
+
+                $('#materiales').empty();
+                var html_select = '';
+                var data = data.responseJSON;
+                for(var i=0; i<data.length; ++i)
+                {
+                    html_select += '<option value ="'+ data[i].id +'">'+data[i].nombre+'</option>'
+                }
+                $('#materiales').html(html_select);
+                tagMaterial();
+            }
+        });
+
+    })
+
+    function tagMaterial()
+    {
+        var materiales_selected = $('#materiales_selected').val();
+        materiales_selected += ','+$('#materiales option:selected').val();
+        $('#materiales_selected').val(materiales_selected);
+        var tags= $('#tags').html();
+        tags += '<span class="badge badge-success">'+$('#materiales option:selected').text()+'</span>';
+        $('#tags').html(tags);
+    }
+
 </script>
 @endsection

@@ -77,6 +77,7 @@ class OrdenesController extends Controller
         $orden->horometro = $request->horometro;
         $orden->kilometraje = $request->kilometraje;
         $orden->entrega = $request->entrega;
+        $orden->estado = $request->estado;
         $orden->save();
         alert()->success('¡Yeah!','Operación realizada con éxito')->autoClose(3000)->showCloseButton();
         return redirect('/admin/ordenes');
@@ -103,7 +104,9 @@ class OrdenesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $orden = Orden::find($id);
+        return view('admin.ordenes.editar')
+            ->with('orden', $orden);
     }
 
     /**
@@ -115,7 +118,39 @@ class OrdenesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $messages = [
+            'required' => 'El campo :attribute es requerido.',
+            'string' => 'El campo :attribute debe ser texto'
+        ];
+        $validator = Validator::make($request->all(),[
+            'nombres' => 'string | required',
+            'doc' => 'string',
+            'horometro' => 'required',
+            'kilometraje' => 'required',
+            'entrega' => 'required',
+        ],$messages);
+        if ($validator->fails()) {
+            alert()->error('Ups!','La operación no pudo ser completada')->autoClose(4000)->showCloseButton();
+            return redirect('/admin/ordenes/'.$id.'/edit')
+                ->withErrors($validator)
+                ->withInput();
+        }
+        $orden = Orden::find($id);
+        $cliente_id = $orden->cliente->id;
+        $cliente = User::find($cliente_id);
+        $cliente->nombres = $request->nombres;
+        $cliente->doc = $request->doc;
+        $cliente->direccion = $request->direccion;
+        $cliente->cel = $request->cel;
+        $cliente->save();
+        //registro de nueva orden
+        $orden->horometro = $request->horometro;
+        $orden->kilometraje = $request->kilometraje;
+        $orden->entrega = $request->entrega;
+        $orden->estado = $request->estado;
+        $orden->save();
+        alert()->success('¡Yeah!','Operación realizada con éxito')->autoClose(3000)->showCloseButton();
+        return redirect('/admin/ordenes');
     }
 
     /**
