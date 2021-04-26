@@ -623,6 +623,9 @@
 			</table>
 
 		</div>
+
+        <img src="{{url('assets/images/users/avatar-1.jpg')}}" alt="" with="30">
+        <p>{{url($servicio->motor1_foto)}}</p>
 	</div>
 
 </body>

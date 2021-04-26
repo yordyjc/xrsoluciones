@@ -13,7 +13,7 @@
         <img class="img-responsive" src="assets/images/membrete.png" alt="" height="145">
         </div>
         <div class="row">
-            <h4 class="text-center" style="font-weight: bold;">Reporte de orden de servicio</h4>
+            <h4 class="text-center" style="font-weight: bold;">Reporte de orden de servicio OT/ST/00{{$orden->id}}</h4>
 		</div>
         <br>
         <table class="table table-bordered" >

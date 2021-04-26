@@ -88,6 +88,7 @@ function concatenar($numero){
                                     <th>Placa</th>
                                     <th>Operacion</th>
                                     <th>Operador</th>
+                                    <th>Informe</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -109,6 +110,11 @@ function concatenar($numero){
                                         <td>{{$checklist->placa}}</td>
                                         <td>{{$checklist->operacion}}</td>
                                         <td>{{$checklist->operador}}</td>
+                                        <td>
+                                        <a href="{{url('admin/reportes/checklist/'.$checklist->id)}}">
+                                            <i class="feather icon-download f-w-600 icon-negro" data-toggle="tooltip" data-placement="left" data-original-title="Generar informe"></i>
+                                        </a>
+                                        </td>
                                     </tr>
                                 @endforeach
                                 @endif

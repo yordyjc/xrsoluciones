@@ -55,7 +55,7 @@ Route::middleware(['auth'])->group(function(){
             Route::post('/materiales', 'Admin\ServiciosController@crearMateriales');
 
             //reportes
-            Route::get('/reporte/{id}','Admin\ReportesController@CheckList');
+            Route::get('/reportes/checklist/{id}','Admin\ReportesController@CheckList');
             Route::get('/reportes/orden/{id}','Admin\ReportesController@ordenServicio');
         });
     });
