@@ -4,6 +4,11 @@
 <head>
 	<title>Reporte de Mantenimiento</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        .page-break {
+            page-break-after: always;
+        }
+    </style>
 </head>
 <body>
 	<div class="container-fluid" style="font-size: 9px;">
@@ -623,9 +628,121 @@
 			</table>
 
 		</div>
+        <div class="page-break"></div>
+        <div class="row title text-center" style="font-weight: bold;font-size:12px">
+            Motor
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <table class="table table-borderless">
+                <tbody>
+                    <tr>
+                        <td>
+                            @if($servicio->motor1_foto)
+                            <img src="{{url($servicio->motor1_foto)}}" alt="" width=200 height="200">
+                            @endif
+                        </td>
+                        <td>
+                            @if($servicio->motor2_foto)
+                            <img src="{{url($servicio->motor2_foto)}}" alt="" width=200 height="200">
+                            @endif
+                        </td>
+                        <td>
+                            @if($servicio->motor3_foto)
+                            <img src="{{url($servicio->motor3_foto)}}" alt="" width=200 height="200">
+                            @endif
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @if($servicio->motor4_foto)
+                            <img src="{{url($servicio->motor4_foto)}}" alt="" width=200 height="200">
+                            @endif
+                        </td>
+                        <td>
+                            @if($servicio->motor5_foto)
+                            <img src="{{url($servicio->motor5_foto)}}" alt="" width=200 height="200">
+                            @endif
+                        </td>
+                        <td>
+                            @if($servicio->motor6_foto)
+                            <img src="{{url($servicio->motor6_foto)}}" alt="" width=200 height="200">
+                            @endif
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @if($servicio->motor7_foto)
+                            <img src="{{url($servicio->motor7_foto)}}" alt="" width=200 height="200">
+                            @endif
+                        </td>
+                        <td>
+                            @if($servicio->motor8_foto)
+                            <img src="{{url($servicio->motor8_foto)}}" alt="" width=200 height="200">
+                            @endif
+                        </td>
+                        <td>
+                            @if($servicio->motor9_foto)
+                            <img src="{{url($servicio->motor9_foto)}}" alt="" width=200 height="200">
+                            @endif
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @if($servicio->motor10_foto)
+                            <img src="{{url($servicio->motor10_foto)}}" alt="" width=200 height="200">
+                            @endif
+                        </td>
+                        <td>
+                            @if($servicio->motor11_foto)
+                            <img src="{{url($servicio->motor11_foto)}}" alt="" width=200 height="200">
+                            @endif
+                        </td>
+                        <td>
+                            @if($servicio->motor12_foto)
+                            <img src="{{url($servicio->motor12_foto)}}" alt="" width=200 height="200">
+                            @endif
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @if($servicio->motor13_foto)
+                            <img src="{{url($servicio->motor13_foto)}}" alt="" width=200 height="200">
+                            @endif
+                        </td>
+                        <td>
+                            @if($servicio->motor14_foto)
+                            <img src="{{url($servicio->motor14_foto)}}" alt="" width=200 height="200">
+                            @endif
+                        </td>
+                        <td>
+                            @if($servicio->motor15_foto)
+                            <img src="{{url($servicio->motor15_foto)}}" alt="" width=200 height="200">
+                            @endif
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @if($servicio->motor16_foto)
+                            <img src="{{url($servicio->motor16_foto)}}" alt="" width=200 height="200">
+                            @endif
+                        </td>
+                        <td>
+                            @if($servicio->motor17_foto)
+                            <img src="{{url($servicio->motor17_foto)}}" alt="" width=200 height="200">
+                            @endif
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
 
-        <img src="{{url('assets/images/users/avatar-1.jpg')}}" alt="" with="30">
-        <p>{{url($servicio->motor1_foto)}}</p>
+                </tbody>
+            </table>
+        </div>
+        
+       
 	</div>
 
 </body>
