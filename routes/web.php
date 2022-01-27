@@ -25,14 +25,16 @@ Route::post('/login','Auth\LoginController@login');
 Route::post('/logout','Auth\LoginController@logout')->name('logout');
 
 Route::middleware(['auth'])->group(function(){
+    Route::get('/', function () {
+        return redirect('/admin/ordenes');
+    });
     Route::prefix('admin')->group(function(){
         Route::get('/sin-permiso', function (){
             return view('permiso');
         });
+
         Route::middleware(['admin'])->group( function(){
-            Route::get('/', function () {
-                return redirect('/admin/servicios');
-            });
+
             Route::resource('/servicios','Admin\ServiciosController');
             Route::get('/servicio/{id}','Admin\ServiciosController@frmNuevoServicio');
             Route::resource('/checklist','Admin\ChecklistController');

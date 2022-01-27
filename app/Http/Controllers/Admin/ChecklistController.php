@@ -88,7 +88,7 @@ class ChecklistController extends Controller
 
         $servicio = new Checklist();
         $servicio->orden_id = $request->orden;
-        $servicio->tipo = $request->tipo; //camioneta =1 \
+        $servicio->formato_id = $request->formato; //camioneta =1 || camion grua=2||camion mezclador=3
         $servicio->placa = $request->placa;
         $servicio->operacion = $request->operacion;
         $servicio->operador = $request->operador;

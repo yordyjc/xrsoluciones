@@ -31,11 +31,12 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             if(Auth::user()->confirmado==1){
                 if ( (Auth::user()->tipo==1 || Auth::user()->tipo==2)  && Auth::user()->estado==1) {
-                    return redirect('/admin/servicios');
+                    return redirect('/admin/ordenes');
                 }
                 elseif (Auth::user()->tipo==3 && Auth::user()->estado==1) {
 
-                    return redirect('/admin/servicios');
+                    //a futuro se puede implementar una panel para clientes
+                    return redirect('/admin/ordenes');
 
                 }
                 else{

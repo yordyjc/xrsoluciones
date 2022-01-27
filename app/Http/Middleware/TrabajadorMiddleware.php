@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class AdminMiddleware
+class TrabajadorMiddleware
 {
     /**
      * Handle an incoming request.
@@ -19,6 +19,5 @@ class AdminMiddleware
             return $next($request);
         }
         return redirect('/admin/sin-permiso');
-
     }
 }

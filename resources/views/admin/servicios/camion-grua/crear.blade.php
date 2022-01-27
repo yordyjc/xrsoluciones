@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-Mantenimiento de flota
+Check list camión grua
 @endsection
 
 @section('content')
@@ -158,7 +158,7 @@ Mantenimiento de flota
         <h4 class="mt-0 header-title">Motor</h4>
 
 
-        <h4 class="mt-0 header-title">Tapa de aceite de motor.</h4>
+        <h4 class="mt-0 header-title">Nivel de aceite de motor</h4>
         <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
             <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
                 Estado
@@ -204,7 +204,7 @@ Mantenimiento de flota
                 Foto
             </label>
             <div class="col-sm-8">
-                <input type="file" id="motor1_foto" class="form-control {{ $errors->has('motor1_foto') ? ' form-control-warning' : '' }}" name=motor1_foto accept=".png, .jpg, .jpeg">
+                <input type="file" id="motor1_foto" class="form-control {{ $errors->has('motor1_foto') ? ' form-control-warning' : '' }}" name="motor1_foto" accept=".png, .jpg, .jpeg">
                 @if ($errors->has('motor1_foto'))
                     <div class="col-form-label">
                         {{ $errors->first('motor1_foto') }}
@@ -214,9 +214,9 @@ Mantenimiento de flota
             </div>
         </div>
 
-        <h4 class="mt-0 header-title">Nivel de aceite de motor.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <h4 class="mt-0 header-title">Nivel de refrigerante</h4>
+        <div class="form-group row detalles {{ $errors->has('motor2') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor2">
                 Estado
             </label>
             <div class="col-md-8 form-radio">
@@ -241,16 +241,16 @@ Mantenimiento de flota
 
             </div>
         </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <div class="form-group row detalles{{ $errors->has('motor2') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor2">
                 Descripción
             </label>
 
             <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor2_descripcion" name="motor2_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                <textarea row="10" class="form-control {{ $errors->has('motor2') ? ' form-control-warning' : '' }}" type="text" id="motor2_descripcion" name="motor2_descripcion">{{old('motor2')}}</textarea>
+                @if ($errors->has('motor2'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('motor2') }}
                     </div>
                 @endif
             </div>
@@ -260,7 +260,7 @@ Mantenimiento de flota
                 Foto
             </label>
             <div class="col-sm-8">
-                <input type="file" id="motor2_foto" class="form-control {{ $errors->has('motor2_foto') ? ' form-control-warning' : '' }}" name=motor2_foto accept=".png, .jpg, .jpeg">
+                <input type="file" id="motor2_foto" class="form-control {{ $errors->has('motor2_foto') ? ' form-control-warning' : '' }}" name="motor2_foto" accept=".png, .jpg, .jpeg">
                 @if ($errors->has('motor2_foto'))
                     <div class="col-form-label">
                         {{ $errors->first('motor2_foto') }}
@@ -270,9 +270,9 @@ Mantenimiento de flota
             </div>
         </div>
 
-        <h4 class="mt-0 header-title">Nivel de refrigerante.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <h4 class="mt-0 header-title">Nivel de Petróleo</h4>
+        <div class="form-group row detalles {{ $errors->has('motor3') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor3">
                 Estado
             </label>
             <div class="col-md-8 form-radio">
@@ -297,16 +297,16 @@ Mantenimiento de flota
 
             </div>
         </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <div class="form-group row detalles{{ $errors->has('motor3') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor3">
                 Descripción
             </label>
 
             <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor3_descripcion" name="motor3_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                <textarea row="10" class="form-control {{ $errors->has('motor3') ? ' form-control-warning' : '' }}" type="text" id="motor3_descripcion" name="motor3_descripcion">{{old('motor3')}}</textarea>
+                @if ($errors->has('motor3'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('motor3') }}
                     </div>
                 @endif
             </div>
@@ -316,7 +316,7 @@ Mantenimiento de flota
                 Foto
             </label>
             <div class="col-sm-8">
-                <input type="file" id="motor3_foto" class="form-control {{ $errors->has('motor3_foto') ? ' form-control-warning' : '' }}" name=motor3_foto accept=".png, .jpg, .jpeg">
+                <input type="file" id="motor3_foto" class="form-control {{ $errors->has('motor3_foto') ? ' form-control-warning' : '' }}" name="motor3_foto" accept=".png, .jpg, .jpeg">
                 @if ($errors->has('motor3_foto'))
                     <div class="col-form-label">
                         {{ $errors->first('motor3_foto') }}
@@ -326,9 +326,9 @@ Mantenimiento de flota
             </div>
         </div>
 
-        <h4 class="mt-0 header-title">Nivel de hidrolina.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <h4 class="mt-0 header-title">Nivel de líquido limpia parabrisas</h4>
+        <div class="form-group row detalles {{ $errors->has('motor4') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor4">
                 Estado
             </label>
             <div class="col-md-8 form-radio">
@@ -353,26 +353,26 @@ Mantenimiento de flota
 
             </div>
         </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <div class="form-group row detalles{{ $errors->has('motor4') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor4">
                 Descripción
             </label>
 
             <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor4_descripcion" name="motor4_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor4_descripcion" name="motor4_descripcion">{{old('motor4')}}</textarea>
+                @if ($errors->has('motor4'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('motor4') }}
                     </div>
                 @endif
             </div>
         </div>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
+        <div class="form-group row detalles {{ $errors->has('motor4') ? ' has-warning' : '' }}">
             <label for="example-text-input" class="col-sm-4 col-form-label" for="motor4_foto">
                 Foto
             </label>
             <div class="col-sm-8">
-                <input type="file" id="motor4_foto" class="form-control {{ $errors->has('motor4_foto') ? ' form-control-warning' : '' }}" name=motor4_foto accept=".png, .jpg, .jpeg">
+                <input type="file" id="motor4_foto" class="form-control {{ $errors->has('motor4_foto') ? ' form-control-warning' : '' }}" name="motor4_foto" accept=".png, .jpg, .jpeg">
                 @if ($errors->has('motor4_foto'))
                     <div class="col-form-label">
                         {{ $errors->first('motor4_foto') }}
@@ -382,9 +382,9 @@ Mantenimiento de flota
             </div>
         </div>
 
-        <h4 class="mt-0 header-title">Nivel de liquido de freno.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <h4 class="mt-0 header-title">Radiador - Tanque de expansión</h4>
+        <div class="form-group row detalles {{ $errors->has('motor5') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor5">
                 Estado
             </label>
             <div class="col-md-8 form-radio">
@@ -409,16 +409,16 @@ Mantenimiento de flota
 
             </div>
         </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <div class="form-group row detalles{{ $errors->has('motor5') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor5">
                 Descripción
             </label>
 
             <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor5_descripcion" name="motor5_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor5_descripcion" name="motor5_descripcion">{{old('motor5')}}</textarea>
+                @if ($errors->has('motor5'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('motor5') }}
                     </div>
                 @endif
             </div>
@@ -428,7 +428,7 @@ Mantenimiento de flota
                 Foto
             </label>
             <div class="col-sm-8">
-                <input type="file" id="motor5_foto" class="form-control {{ $errors->has('motor5_foto') ? ' form-control-warning' : '' }}" name=motor5_foto accept=".png, .jpg, .jpeg">
+                <input type="file" id="motor5_foto" class="form-control {{ $errors->has('motor5_foto') ? ' form-control-warning' : '' }}" name="motor5_foto" accept=".png, .jpg, .jpeg">
                 @if ($errors->has('motor5_foto'))
                     <div class="col-form-label">
                         {{ $errors->first('motor5_foto') }}
@@ -438,9 +438,9 @@ Mantenimiento de flota
             </div>
         </div>
 
-        <h4 class="mt-0 header-title">Nivel de líquido limpia parabrisas.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <h4 class="mt-0 header-title">Fajas - templadores - poleas</h4>
+        <div class="form-group row detalles {{ $errors->has('motor6') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor6">
                 Estado
             </label>
             <div class="col-md-8 form-radio">
@@ -465,26 +465,26 @@ Mantenimiento de flota
 
             </div>
         </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <div class="form-group row detalles{{ $errors->has('motor6') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor6">
                 Descripción
             </label>
 
             <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor6_descripcion" name="motor6_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                <textarea row="10" class="form-control {{ $errors->has('motor6') ? ' form-control-warning' : '' }}" type="text" id="motor6_descripcion" name="motor6_descripcion">{{old('motor6')}}</textarea>
+                @if ($errors->has('motor6'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('motor6') }}
                     </div>
                 @endif
             </div>
         </div>
         <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor4_foto">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor6_foto">
                 Foto
             </label>
             <div class="col-sm-8">
-                <input type="file" id="motor6_foto" class="form-control {{ $errors->has('motor6_foto') ? ' form-control-warning' : '' }}" name=motor6_foto accept=".png, .jpg, .jpeg">
+                <input type="file" id="motor6_foto" class="form-control {{ $errors->has('motor6_foto') ? ' form-control-warning' : '' }}" name="motor6_foto" accept=".png, .jpg, .jpeg">
                 @if ($errors->has('motor6_foto'))
                     <div class="col-form-label">
                         {{ $errors->first('motor6_foto') }}
@@ -494,9 +494,9 @@ Mantenimiento de flota
             </div>
         </div>
 
-        <h4 class="mt-0 header-title">Radiador - Tanque de expansión.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <h4 class="mt-0 header-title">Filtro de aire - intercooler</h4>
+        <div class="form-group row detalles {{ $errors->has('motor7') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor7">
                 Estado
             </label>
             <div class="col-md-8 form-radio">
@@ -521,26 +521,26 @@ Mantenimiento de flota
 
             </div>
         </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <div class="form-group row detalles{{ $errors->has('motor7') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor7">
                 Descripción
             </label>
 
             <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor7_descripcion" name="motor7_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                <textarea row="10" class="form-control {{ $errors->has('motor7') ? ' form-control-warning' : '' }}" type="text" id="motor7_descripcion" name="motor7_descripcion">{{old('motor7')}}</textarea>
+                @if ($errors->has('motor7'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('motor7') }}
                     </div>
                 @endif
             </div>
         </div>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
+        <div class="form-group row detalles {{ $errors->has('motor7') ? ' has-warning' : '' }}">
             <label for="example-text-input" class="col-sm-4 col-form-label" for="motor7_foto">
                 Foto
             </label>
             <div class="col-sm-8">
-                <input type="file" id="motor7_foto" class="form-control {{ $errors->has('motor7_foto') ? ' form-control-warning' : '' }}" name=motor7_foto accept=".png, .jpg, .jpeg">
+                <input type="file" id="motor7_foto" class="form-control {{ $errors->has('motor7_foto') ? ' form-control-warning' : '' }}" name="motor7_foto" accept=".png, .jpg, .jpeg">
                 @if ($errors->has('motor7_foto'))
                     <div class="col-form-label">
                         {{ $errors->first('motor7_foto') }}
@@ -550,9 +550,9 @@ Mantenimiento de flota
             </div>
         </div>
 
-        <h4 class="mt-0 header-title">Fajas - templadores - poleas.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <h4 class="mt-0 header-title">Mangueras admisión refrigerante y combustible</h4>
+        <div class="form-group row detalles {{ $errors->has('motor8') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor8">
                 Estado
             </label>
             <div class="col-md-8 form-radio">
@@ -577,26 +577,26 @@ Mantenimiento de flota
 
             </div>
         </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <div class="form-group row detalles{{ $errors->has('motor8') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor8">
                 Descripción
             </label>
 
             <div class="col-sm-8">
                 <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor8_descripcion" name="motor8_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                @if ($errors->has('motor8'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('motor8') }}
                     </div>
                 @endif
             </div>
         </div>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
+        <div class="form-group row detalles {{ $errors->has('motor8') ? ' has-warning' : '' }}">
             <label for="example-text-input" class="col-sm-4 col-form-label" for="motor8_foto">
                 Foto
             </label>
             <div class="col-sm-8">
-                <input type="file" id="motor8_foto" class="form-control {{ $errors->has('motor4_foto') ? ' form-control-warning' : '' }}" name=motor8_foto accept=".png, .jpg, .jpeg">
+                <input type="file" id="motor8_foto" class="form-control {{ $errors->has('motor4_foto') ? ' form-control-warning' : '' }}" name="motor8_foto" accept=".png, .jpg, .jpeg">
                 @if ($errors->has('motor8_foto'))
                     <div class="col-form-label">
                         {{ $errors->first('motor8_foto') }}
@@ -606,516 +606,12 @@ Mantenimiento de flota
             </div>
         </div>
 
-        <h4 class="mt-0 header-title">Filtro de aire - manguera -Intercooler.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Estado
-            </label>
-            <div class="col-md-8 form-radio">
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor9_estado" id="motor9_estado" value="1" checked="checked">
-                    <i class="helper"></i>Bueno
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor9_estado" id="motor9_estado" value="2" >
-                    <i class="helper"></i>Regular
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor9_estado" id="motor9_estado" value="3" >
-                    <i class="helper"></i>Malo
-                    </label>
-                </div>
-
-            </div>
-        </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Descripción
-            </label>
-
-            <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor9_descripcion" name="motor9_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
-                    </div>
-                @endif
-            </div>
-        </div>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor9_foto">
-                Foto
-            </label>
-            <div class="col-sm-8">
-                <input type="file" id="motor9_foto" class="form-control {{ $errors->has('motor9_foto') ? ' form-control-warning' : '' }}" name=motor9_foto accept=".png, .jpg, .jpeg">
-                @if ($errors->has('motor9_foto'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor9_foto') }}
-                    </div>
-                @endif
-                <h6>Previsualización:</h6><img id="img-motor9_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
-            </div>
-        </div>
-
-        <h4 class="mt-0 header-title">Plumillas.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Estado
-            </label>
-            <div class="col-md-8 form-radio">
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor10_estado" id="motor10_estado" value="1" checked="checked">
-                    <i class="helper"></i>Bueno
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor10_estado" id="motor10_estado" value="2" >
-                    <i class="helper"></i>Regular
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor10_estado" id="motor10_estado" value="3" >
-                    <i class="helper"></i>Malo
-                    </label>
-                </div>
-
-            </div>
-        </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Descripción
-            </label>
-
-            <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor10_descripcion" name="motor10_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
-                    </div>
-                @endif
-            </div>
-        </div>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor10_foto">
-                Foto
-            </label>
-            <div class="col-sm-8">
-                <input type="file" id="motor10_foto" class="form-control {{ $errors->has('motor4_foto') ? ' form-control-warning' : '' }}" name=motor10_foto accept=".png, .jpg, .jpeg">
-                @if ($errors->has('motor10_foto'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor10_foto') }}
-                    </div>
-                @endif
-                <h6>Previsualización:</h6><img id="img-motor10_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
-            </div>
-        </div>
-
-        <h4 class="mt-0 header-title">Fuga de aceite.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Estado
-            </label>
-            <div class="col-md-8 form-radio">
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor11_estado" id="motor11_estado" value="1" checked="checked">
-                    <i class="helper"></i>Bueno
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor11_estado" id="motor11_estado" value="2" >
-                    <i class="helper"></i>Regular
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor11_estado" id="motor11_estado" value="3" >
-                    <i class="helper"></i>Malo
-                    </label>
-                </div>
-
-            </div>
-        </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Descripción
-            </label>
-
-            <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor11_motor12-estado" name="motor11_motor12-estado">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
-                    </div>
-                @endif
-            </div>
-        </div>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor11_foto">
-                Foto
-            </label>
-            <div class="col-sm-8">
-                <input type="file" id="motor11_foto" class="form-control {{ $errors->has('motor11_foto') ? ' form-control-warning' : '' }}" name=motor11_foto accept=".png, .jpg, .jpeg">
-                @if ($errors->has('motor11_foto'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor11_foto') }}
-                    </div>
-                @endif
-                <h6>Previsualización:</h6><img id="img-motor11_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
-            </div>
-        </div>
-
-        <h4 class="mt-0 header-title">Fuga de refrigerante..</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Estado
-            </label>
-            <div class="col-md-8 form-radio">
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor12_estado" id="motor12_estado" value="1" checked="checked">
-                    <i class="helper"></i>Bueno
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor12_estado" id="motor12_estado" value="2" >
-                    <i class="helper"></i>Regular
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor12_estado" id="motor12_estado" value="3" >
-                    <i class="helper"></i>Malo
-                    </label>
-                </div>
-
-            </div>
-        </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Descripción
-            </label>
-
-            <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor12_descripcion" name="motor12_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
-                    </div>
-                @endif
-            </div>
-        </div>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor12_foto">
-                Foto
-            </label>
-            <div class="col-sm-8">
-                <input type="file" id="motor12_foto" class="form-control {{ $errors->has('motor12_foto') ? ' form-control-warning' : '' }}" name=motor12_foto accept=".png, .jpg, .jpeg">
-                @if ($errors->has('motor12_foto'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor12_foto') }}
-                    </div>
-                @endif
-                <h6>Previsualización:</h6><img id="img-motor12_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
-            </div>
-        </div>
-
-        <h4 class="mt-0 header-title">Fuga de hidrolina.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Estado
-            </label>
-            <div class="col-md-8 form-radio">
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor13_estado" id="motor13_estado" value="2" checked="checked">
-                    <i class="helper"></i>Bueno
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor13_estado" id="motor13_estado" value="3" >
-                    <i class="helper"></i>Regular
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor13_estado" id="motor13_estado" value="0" >
-                    <i class="helper"></i>Malo
-                    </label>
-                </div>
-
-            </div>
-        </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Descripción
-            </label>
-
-            <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor13_descripcion" name="motor13_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
-                    </div>
-                @endif
-            </div>
-        </div>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor13_foto">
-                Foto
-            </label>
-            <div class="col-sm-8">
-                <input type="file" id="motor13_foto" class="form-control {{ $errors->has('motor13_foto') ? ' form-control-warning' : '' }}" name=motor13_foto accept=".png, .jpg, .jpeg">
-                @if ($errors->has('motor13_foto'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor13_foto') }}
-                    </div>
-                @endif
-                <h6>Previsualización:</h6><img id="img-motor13_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
-            </div>
-        </div>
-
-        <h4 class="mt-0 header-title">Fuga de liquido de freno.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Estado
-            </label>
-            <div class="col-md-8 form-radio">
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor14_estado" id="motor14_estado" value="1" checked="checked">
-                    <i class="helper"></i>Bueno
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor14_estado" id="motor14_estado" value="2" >
-                    <i class="helper"></i>Regular
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor14_estado" id="motor14_estado" value="3" >
-                    <i class="helper"></i>Malo
-                    </label>
-                </div>
-
-            </div>
-        </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Descripción
-            </label>
-
-            <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor14_descripcion" name="motor14_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
-                    </div>
-                @endif
-            </div>
-        </div>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor14_foto">
-                Foto
-            </label>
-            <div class="col-sm-8">
-                <input type="file" id="motor14_foto" class="form-control {{ $errors->has('motor14_foto') ? ' form-control-warning' : '' }}" name=motor14_foto accept=".png, .jpg, .jpeg">
-                @if ($errors->has('motor14_foto'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor14_foto') }}
-                    </div>
-                @endif
-                <h6>Previsualización:</h6><img id="img-motor14_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
-            </div>
-        </div>
-
-        <h4 class="mt-0 header-title">Fuga de combustible.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Estado
-            </label>
-            <div class="col-md-8 form-radio">
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor15_estado" id="motor15_estado" value="1" checked="checked">
-                    <i class="helper"></i>Bueno
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor15_estado" id="motor15_estado" value="2" >
-                    <i class="helper"></i>Regular
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor15_estado" id="motor15_estado" value="3" >
-                    <i class="helper"></i>Malo
-                    </label>
-                </div>
-
-            </div>
-        </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Descripción
-            </label>
-
-            <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor15_descripcion" name="motor15_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
-                    </div>
-                @endif
-            </div>
-        </div>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor15_foto">
-                Foto
-            </label>
-            <div class="col-sm-8">
-                <input type="file" id="motor15_foto" class="form-control {{ $errors->has('motor15_foto') ? ' form-control-warning' : '' }}" name=motor15_foto accept=".png, .jpg, .jpeg">
-                @if ($errors->has('motor15_foto'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor15_foto') }}
-                    </div>
-                @endif
-                <h6>Previsualización:</h6><img id="img-motor15_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
-            </div>
-        </div>
-
-        <h4 class="mt-0 header-title">Caja de fusibles.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Estado
-            </label>
-            <div class="col-md-8 form-radio">
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor16_estado" id="motor16_estado" value="1" checked="checked">
-                    <i class="helper"></i>Bueno
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor16_estado" id="motor16_estado" value="2" >
-                    <i class="helper"></i>Regular
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor16_estado" id="motor16_estado" value="3" >
-                    <i class="helper"></i>Malo
-                    </label>
-                </div>
-
-            </div>
-        </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Descripción
-            </label>
-
-            <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor16_descripcion" name="motor16_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
-                    </div>
-                @endif
-            </div>
-        </div>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor16_foto">
-                Foto
-            </label>
-            <div class="col-sm-8">
-                <input type="file" id="motor16_foto" class="form-control {{ $errors->has('motor4_foto') ? ' form-control-warning' : '' }}" name=motor16_foto accept=".png, .jpg, .jpeg">
-                @if ($errors->has('motor16_foto'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor16_foto') }}
-                    </div>
-                @endif
-                <h6>Previsualización:</h6><img id="img-motor16_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
-            </div>
-        </div>
-
-        <h4 class="mt-0 header-title">Batería (bornes libres de sulfato).</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Estado
-            </label>
-            <div class="col-md-8 form-radio">
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor17_estado" id="motor17_estado" value="1" checked="checked">
-                    <i class="helper"></i>Bueno
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor17_estado" id="motor17_estado" value="2" >
-                    <i class="helper"></i>Regular
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="motor17_estado" id="motor17_estado" value="3" >
-                    <i class="helper"></i>Malo
-                    </label>
-                </div>
-
-            </div>
-        </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Descripción
-            </label>
-
-            <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="motor17_descripcion" name="motor17_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
-                    </div>
-                @endif
-            </div>
-        </div>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor17_foto">
-                Foto
-            </label>
-            <div class="col-sm-8">
-                <input type="file" id="motor17_foto" class="form-control {{ $errors->has('motor4_foto') ? ' form-control-warning' : '' }}" name=motor17_foto accept=".png, .jpg, .jpeg">
-                @if ($errors->has('motor17_foto'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor17_foto') }}
-                    </div>
-                @endif
-                <h6>Previsualización:</h6><img id="img-motor17_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
-            </div>
-        </div>
-
         <br>
         <h4 class="mt-0 header-title">Transmisión</h4>
 
-        <h4 class="mt-0 header-title">Poncho de punta de palier.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <h4 class="mt-0 header-title">Embrague - Caja de cambios</h4>
+        <div class="form-group row detalles {{ $errors->has('tran1') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="tran1">
                 Estado
             </label>
             <div class="col-md-8 form-radio">
@@ -1140,24 +636,38 @@ Mantenimiento de flota
 
             </div>
         </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <div class="form-group row detalles{{ $errors->has('tran1') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="tran1">
                 Descripción
             </label>
 
             <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="tran1_descripcion" name="tran1_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                <textarea row="10" class="form-control {{ $errors->has('tran1') ? ' form-control-warning' : '' }}" type="text" id="tran1_descripcion" name="tran1_descripcion">{{old('tran1')}}</textarea>
+                @if ($errors->has('tran1'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('tran1') }}
                     </div>
                 @endif
             </div>
         </div>
+        <div class="form-group row detalles {{ $errors->has('tran1') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="tran1_foto">
+                Foto
+            </label>
+            <div class="col-sm-8">
+                <input type="file" id="tran1_foto" class="form-control {{ $errors->has('tran1_foto') ? ' form-control-warning' : '' }}" name="tran1_foto" accept=".png, .jpg, .jpeg">
+                @if ($errors->has('tran1_foto'))
+                    <div class="col-form-label">
+                        {{ $errors->first('tran1_foto') }}
+                    </div>
+                @endif
+                <h6>Previsualización:</h6><img id="img-tran1_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
+            </div>
+        </div>
 
-        <h4 class="mt-0 header-title">Llantas (cocada no menor a 4mm.).</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <h4 class="mt-0 header-title">Crucetas - soporte de cardán</h4>
+        <div class="form-group row detalles {{ $errors->has('tran2') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="tran2">
                 Estado
             </label>
             <div class="col-md-8 form-radio">
@@ -1183,24 +693,38 @@ Mantenimiento de flota
             </div>
 
         </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <div class="form-group row detalles{{ $errors->has('tran2') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="tran2">
                 Descripción
             </label>
 
             <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="tran2_descipcion" name="tran2_descipcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                <textarea row="10" class="form-control {{ $errors->has('tran2') ? ' form-control-warning' : '' }}" type="text" id="tran2_descipcion" name="tran2_descipcion">{{old('tran2')}}</textarea>
+                @if ($errors->has('tran2'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('tran2') }}
                     </div>
                 @endif
             </div>
         </div>
+        <div class="form-group row detalles {{ $errors->has('tran2') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="tran2_foto">
+                Foto
+            </label>
+            <div class="col-sm-8">
+                <input type="file" id="tran2_foto" class="form-control {{ $errors->has('tran2_foto') ? ' form-control-warning' : '' }}" name="tran2_foto" accept=".png, .jpg, .jpeg">
+                @if ($errors->has('tran2_foto'))
+                    <div class="col-form-label">
+                        {{ $errors->first('tran2_foto') }}
+                    </div>
+                @endif
+                <h6>Previsualización:</h6><img id="img-tran2_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
+            </div>
+        </div>
 
-        <h4 class="mt-0 header-title">Llantas (presión de aire 35 PSI).</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <h4 class="mt-0 header-title">Diferenciales</h4>
+        <div class="form-group row detalles {{ $errors->has('tran3') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="tran3">
                 Estado
             </label>
             <div class="col-md-8 form-radio">
@@ -1225,24 +749,38 @@ Mantenimiento de flota
 
             </div>
         </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <div class="form-group row detalles{{ $errors->has('tran3') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="tran3">
                 Descripción
             </label>
 
             <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="tran3_descripcion" name="tran3_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                <textarea row="10" class="form-control {{ $errors->has('tran3') ? ' form-control-warning' : '' }}" type="text" id="tran3_descripcion" name="tran3_descripcion">{{old('tran3')}}</textarea>
+                @if ($errors->has('tran3'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('tran3') }}
                     </div>
                 @endif
             </div>
         </div>
+        <div class="form-group row detalles {{ $errors->has('tran3') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="tran3_foto">
+                Foto
+            </label>
+            <div class="col-sm-8">
+                <input type="file" id="tran3_foto" class="form-control {{ $errors->has('tran3_foto') ? ' form-control-warning' : '' }}" name="tran3_foto" accept=".png, .jpg, .jpeg">
+                @if ($errors->has('tran3_foto'))
+                    <div class="col-form-label">
+                        {{ $errors->first('tran3_foto') }}
+                    </div>
+                @endif
+                <h6>Previsualización:</h6><img id="img-tran3_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
+            </div>
+        </div>
 
-        <h4 class="mt-0 header-title">Ruedas (ajuste tuercas 105N-m 77Lb-pie).</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <h4 class="mt-0 header-title">Llantas incluye repuesto (    )</h4>
+        <div class="form-group row detalles {{ $errors->has('tran4') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="tran4">
                 Estado
             </label>
             <div class="col-md-8 form-radio">
@@ -1267,400 +805,427 @@ Mantenimiento de flota
 
             </div>
         </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <div class="form-group row detalles{{ $errors->has('tran4') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="tran4">
                 Descripción
             </label>
 
             <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="tran4_descripcion" name="tran4_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                <textarea row="10" class="form-control {{ $errors->has('tran4') ? ' form-control-warning' : '' }}" type="text" id="tran4_descripcion" name="tran4_descripcion">{{old('motor1')}}</textarea>
+                @if ($errors->has('tran4'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('tran4') }}
                     </div>
                 @endif
             </div>
         </div>
-
-        <h4 class="mt-0 header-title">Roseta (quebrada o suelta).</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Estado
+        <div class="form-group row detalles {{ $errors->has('tran4') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="tran4_foto">
+                Foto
             </label>
-            <div class="col-md-8 form-radio">
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="tran5_estado" id="tran5_estado" value="1" checked="checked">
-                    <i class="helper"></i>Bueno
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="tran5_estado" id="tran5_estado" value="2" >
-                    <i class="helper"></i>Regular
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="tran5_estado" id="tran5_estado" value="3" >
-                    <i class="helper"></i>Malo
-                    </label>
-                </div>
-
-            </div>
-        </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Descripción
-            </label>
-
             <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="tran5_descripcion" name="tran5_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                <input type="file" id="tran4_foto" class="form-control {{ $errors->has('tran4_foto') ? ' form-control-warning' : '' }}" name="tran4_foto" accept=".png, .jpg, .jpeg">
+                @if ($errors->has('tran4_foto'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('tran4_foto') }}
                     </div>
                 @endif
-            </div>
-        </div>
-
-        <h4 class="mt-0 header-title">Llanta de repuesta.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Estado
-            </label>
-            <div class="col-md-8 form-radio">
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="tran6_estado" id="tran6_estado" value="1" checked="checked">
-                    <i class="helper"></i>Bueno
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="tran6_estado" id="tran6_estado" value="2" >
-                    <i class="helper"></i>Regular
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="tran6_estado" id="tran6_estado" value="3" >
-                    <i class="helper"></i>Malo
-                    </label>
-                </div>
-
-            </div>
-        </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Descripción
-            </label>
-
-            <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="tran6_descripcion" name="tran6_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
-                    </div>
-                @endif
-            </div>
-        </div>
-
-        <h4 class="mt-0 header-title">Seguro de tuerca de rueda.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Estado
-            </label>
-            <div class="col-md-8 form-radio">
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="tran7_estado" id="tran7_estado" value="1" checked="checked">
-                    <i class="helper"></i>Bueno
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="tran7_estado" id="tran7_estado" value="2" >
-                    <i class="helper"></i>Regular
-                    </label>
-                </div>
-                <div class="form-check-inline my-1">
-                    <label>
-                    <input type="radio" name="tran7_estado" id="tran7_estado" value="3" >
-                    <i class="helper"></i>Malo
-                    </label>
-                </div>
-
-            </div>
-        </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
-                Descripción
-            </label>
-
-            <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="tran7_descripcion" name="tran7_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
-                    <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
-                    </div>
-                @endif
+                <h6>Previsualización:</h6><img id="img-tran4_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
             </div>
         </div>
 
         <br>
-        <h4 class="mt-0 header-title">Suspensión - frenos</h4>
-                <h4 class="mt-0 header-title">Amortiguadores.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <h4 class="mt-0 header-title">Dirección</h4>
+        <h4 class="mt-0 header-title">Nivel de hidrolina</h4>
+        <div class="form-group row detalles {{ $errors->has('dir1') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="dir1">
                 Estado
             </label>
             <div class="col-md-8 form-radio">
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="frenos1_estado" id="frenos1_estado" value="1" checked="checked">
+                    <input type="radio" name="dir1_estado" id="dir1_estado" value="1" checked="checked">
                     <i class="helper"></i>Bueno
                     </label>
                 </div>
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="frenos1_estado" id="frenos1_estado" value="2" >
+                    <input type="radio" name="dir1_estado" id="dir1_estado" value="2" >
                     <i class="helper"></i>Regular
                     </label>
                 </div>
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="frenos1_estado" id="frenos1_estado" value="3" >
+                    <input type="radio" name="dir1_estado" id="dir1_estado" value="3" >
                     <i class="helper"></i>Malo
                     </label>
                 </div>
 
             </div>
         </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <div class="form-group row detalles{{ $errors->has('dir1') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="dir1">
                 Descripción
             </label>
 
             <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="frenos1_descripcion" name="frenos1_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                <textarea row="10" class="form-control {{ $errors->has('dir1') ? ' form-control-warning' : '' }}" type="text" id="dir1_descripcion" name="dir1_descripcion">{{old('dir1')}}</textarea>
+                @if ($errors->has('dir1'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('dir1') }}
                     </div>
                 @endif
             </div>
         </div>
+        <div class="form-group row detalles {{ $errors->has('dir1') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="dir1_foto">
+                Foto
+            </label>
+            <div class="col-sm-8">
+                <input type="file" id="dir1_foto" class="form-control {{ $errors->has('dir1_foto') ? ' form-control-warning' : '' }}" name="dir1_foto" accept=".png, .jpg, .jpeg">
+                @if ($errors->has('tran4_foto'))
+                    <div class="col-form-label">
+                        {{ $errors->first('tran4_foto') }}
+                    </div>
+                @endif
+                <h6>Previsualización:</h6><img id="img-dir1_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
+            </div>
+        </div>
 
-                <h4 class="mt-0 header-title">Muelles posteriores.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <h4 class="mt-0 header-title">Servo - Cajas de dirección</h4>
+        <div class="form-group row detalles {{ $errors->has('dir2') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="dir2">
                 Estado
             </label>
             <div class="col-md-8 form-radio">
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="frenos2_estado" id="frenos2_estado" value="1" checked="checked">
+                    <input type="radio" name="dir2_estado" id="dir2_estado" value="1" checked="checked">
                     <i class="helper"></i>Bueno
                     </label>
                 </div>
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="frenos2_estado" id="frenos2_estado" value="2" >
+                    <input type="radio" name="dir2_estado" id="dir2_estado" value="2" >
                     <i class="helper"></i>Regular
                     </label>
                 </div>
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="frenos2_estado" id="frenos2_estado" value="3" >
+                    <input type="radio" name="dir2_estado" id="dir2_estado" value="3" >
                     <i class="helper"></i>Malo
                     </label>
                 </div>
 
             </div>
         </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <div class="form-group row detalles{{ $errors->has('dir2') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="dir2">
                 Descripción
             </label>
 
             <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="frenos2_descripcion" name="frenos2_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                <textarea row="10" class="form-control {{ $errors->has('dir2') ? ' form-control-warning' : '' }}" type="text" id="dir2_descripcion" name="dir2_descripcion">{{old('dir2')}}</textarea>
+                @if ($errors->has('dir2'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('dir2') }}
                     </div>
                 @endif
             </div>
         </div>
+        <div class="form-group row detalles {{ $errors->has('dir2') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="dir2_foto">
+                Foto
+            </label>
+            <div class="col-sm-8">
+                <input type="file" id="dir2_foto" class="form-control {{ $errors->has('dir2_foto') ? ' form-control-warning' : '' }}" name="dir2_foto" accept=".png, .jpg, .jpeg">
+                @if ($errors->has('dir2_foto'))
+                    <div class="col-form-label">
+                        {{ $errors->first('dir2_foto') }}
+                    </div>
+                @endif
+                <h6>Previsualización:</h6><img id="img-dir2_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
+            </div>
+        </div>
 
-                <h4 class="mt-0 header-title">Pastillas de freno (limpias).</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <h4 class="mt-0 header-title">Brazos - terminales de dirección</h4>
+        <div class="form-group row detalles {{ $errors->has('dir3') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="dir3">
                 Estado
             </label>
             <div class="col-md-8 form-radio">
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="frenos3_estado" id="frenos3_estado" value="1" checked="checked">
+                    <input type="radio" name="dir3estado" id="dir3_estado" value="1" checked="checked">
                     <i class="helper"></i>Bueno
                     </label>
                 </div>
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="frenos3_estado" id="frenos3_estado" value="2" >
+                    <input type="radio" name="dir3_estado" id="dir3_estado" value="2" >
                     <i class="helper"></i>Regular
                     </label>
                 </div>
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="frenos3_estado" id="frenos3_estado" value="3" >
+                    <input type="radio" name="dir3_estado" id="dir3_estado" value="3" >
                     <i class="helper"></i>Malo
                     </label>
                 </div>
 
             </div>
         </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <div class="form-group row detalles{{ $errors->has('dir3') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="dir3">
                 Descripción
             </label>
 
             <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="frenos3_descripcion" name="frenos3_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                <textarea row="10" class="form-control {{ $errors->has('dir3') ? ' form-control-warning' : '' }}" type="text" id="dir3_descripcion" name="dir3_descripcion">{{old('dir3')}}</textarea>
+                @if ($errors->has('dir3'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('dir3') }}
                     </div>
                 @endif
             </div>
         </div>
+        <div class="form-group row detalles {{ $errors->has('dir3') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="dir3_foto">
+                Foto
+            </label>
+            <div class="col-sm-8">
+                <input type="file" id="dir3_foto" class="form-control {{ $errors->has('dir3_foto') ? ' form-control-warning' : '' }}" name="dir3_foto" accept=".png, .jpg, .jpeg">
+                @if ($errors->has('dir3_foto'))
+                    <div class="col-form-label">
+                        {{ $errors->first('dir3_foto') }}
+                    </div>
+                @endif
+                <h6>Previsualización:</h6><img id="img-dir3_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
+            </div>
+        </div>
 
-        <h4 class="mt-0 header-title">Freno de parqueo.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <h4 class="mt-0 header-title">Enfriador de aceite</h4>
+        <div class="form-group row detalles {{ $errors->has('dir4') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="dir4">
                 Estado
             </label>
             <div class="col-md-8 form-radio">
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="frenos4_estado" id="frenos4_estado" value="1" checked="checked">
+                    <input type="radio" name="dir4_estado" id="dir4_estado" value="1" checked="checked">
                     <i class="helper"></i>Bueno
                     </label>
                 </div>
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="frenos4_estado" id="frenos4_estado" value="2" >
+                    <input type="radio" name="dir4_estado" id="dir4_estado" value="2" >
                     <i class="helper"></i>Regular
                     </label>
                 </div>
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="frenos4_estado" id="frenos4_estado" value="3" >
+                    <input type="radio" name="dir4_estado" id="dir4_estado" value="3" >
                     <i class="helper"></i>Malo
                     </label>
                 </div>
 
             </div>
         </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <div class="form-group row detalles{{ $errors->has('dir4') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="dir4">
                 Descripción
             </label>
 
             <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="frenos4_descripcion" name="frenos4_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                <textarea row="10" class="form-control {{ $errors->has('dir4') ? ' form-control-warning' : '' }}" type="text" id="dir4_descripcion" name="dir4_descripcion">{{old('dir3')}}</textarea>
+                @if ($errors->has('dir4'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('dir4') }}
                     </div>
                 @endif
+            </div>
+        </div>
+        <div class="form-group row detalles {{ $errors->has('dir4') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="dir4_foto">
+                Foto
+            </label>
+            <div class="col-sm-8">
+                <input type="file" id="dir4_foto" class="form-control {{ $errors->has('dir4_foto') ? ' form-control-warning' : '' }}" name="dir4_foto" accept=".png, .jpg, .jpeg">
+                @if ($errors->has('dir4_foto'))
+                    <div class="col-form-label">
+                        {{ $errors->first('dir4_foto') }}
+                    </div>
+                @endif
+                <h6>Previsualización:</h6><img id="img-dir4_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
+            </div>
+        </div>
+        <h4 class="mt-0 header-title">Crucetas - topes de dirección</h4>
+        <div class="form-group row detalles {{ $errors->has('dir5') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="dir5">
+                Estado
+            </label>
+            <div class="col-md-8 form-radio">
+                <div class="form-check-inline my-1">
+                    <label>
+                    <input type="radio" name="dir5_estado" id="dir5_estado" value="1" checked="checked">
+                    <i class="helper"></i>Bueno
+                    </label>
+                </div>
+                <div class="form-check-inline my-1">
+                    <label>
+                    <input type="radio" name="dir5_estado" id="dir5_estado" value="2" >
+                    <i class="helper"></i>Regular
+                    </label>
+                </div>
+                <div class="form-check-inline my-1">
+                    <label>
+                    <input type="radio" name="dir5_estado" id="dir5_estado" value="3" >
+                    <i class="helper"></i>Malo
+                    </label>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-group row detalles{{ $errors->has('dir5') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="dir5">
+                Descripción
+            </label>
+
+            <div class="col-sm-8">
+                <textarea row="10" class="form-control {{ $errors->has('dir5') ? ' form-control-warning' : '' }}" type="text" id="dir5_descripcion" name="dir5_descripcion">{{old('dir5')}}</textarea>
+                @if ($errors->has('dir5'))
+                    <div class="col-form-label">
+                        {{ $errors->first('dir5') }}
+                    </div>
+                @endif
+            </div>
+        </div>
+        <div class="form-group row detalles {{ $errors->has('dir5') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="dir5_foto">
+                Foto
+            </label>
+            <div class="col-sm-8">
+                <input type="file" id="dir5_foto" class="form-control {{ $errors->has('dir5_foto') ? ' form-control-warning' : '' }}" name="dir5_foto" accept=".png, .jpg, .jpeg">
+                @if ($errors->has('dir5_foto'))
+                    <div class="col-form-label">
+                        {{ $errors->first('dir5_foto') }}
+                    </div>
+                @endif
+                <h6>Previsualización:</h6><img id="img-dir5_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
             </div>
         </div>
 
         <br>
-        <h4 class="mt-0 header-title">Eléctrico</h4>
-        <h4 class="mt-0 header-title">Nivel de combustible.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <h4 class="mt-0 header-title">Suspensión</h4>
+        <h4 class="mt-0 header-title">Amortiguadores</h4>
+        <div class="form-group row detalles {{ $errors->has('amo1') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="amo1">
                 Estado
             </label>
             <div class="col-md-8 form-radio">
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="ele1_estado" id="ele1_estado" value="1" checked="checked">
+                    <input type="radio" name="amo1_estado" id="amo1_estado" value="1" checked="checked">
                     <i class="helper"></i>Bueno
                     </label>
                 </div>
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="ele1_estado" id="ele1_estado" value="2" >
+                    <input type="radio" name="amo1_estado" id="amo1_estado" value="2" >
                     <i class="helper"></i>Regular
                     </label>
                 </div>
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="ele1_estado" id="ele1_estado" value="3" >
+                    <input type="radio" name="amo1_estado" id="amo1_estado" value="3" >
                     <i class="helper"></i>Malo
                     </label>
                 </div>
 
             </div>
         </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <div class="form-group row detalles{{ $errors->has('amo1') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="amo1">
                 Descripción
             </label>
 
             <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="ele1_descripcion" name="ele1_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                <textarea row="10" class="form-control {{ $errors->has('amo1') ? ' form-control-warning' : '' }}" type="text" id="amo1_descripcion" name="amo1_descripcion">{{old('amo1')}}</textarea>
+                @if ($errors->has('amo1'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('amo1') }}
                     </div>
                 @endif
             </div>
         </div>
+        <div class="form-group row detalles {{ $errors->has('amo1') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="amo1_foto">
+                Foto
+            </label>
+            <div class="col-sm-8">
+                <input type="file" id="amo1_foto" class="form-control {{ $errors->has('amo1_foto') ? ' form-control-warning' : '' }}" name="amo1_foto" accept=".png, .jpg, .jpeg">
+                @if ($errors->has('dir5_foto'))
+                    <div class="col-form-label">
+                        {{ $errors->first('dir5_foto') }}
+                    </div>
+                @endif
+                <h6>Previsualización:</h6><img id="img-amo1_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
+            </div>
+        </div>
 
-        <h4 class="mt-0 header-title">Relojes - Controles de tablero.</h4>
-        <div class="form-group row detalles {{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <h4 class="mt-0 header-title">Muelles delanteros y posterior</h4>
+        <div class="form-group row detalles {{ $errors->has('amo2') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="amo2">
                 Estado
             </label>
             <div class="col-md-8 form-radio">
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="ele2_estado" id="ele2_estado" value="1" checked="checked">
+                    <input type="radio" name="amo2_estado" id="amo2_estado" value="1" checked="checked">
                     <i class="helper"></i>Bueno
                     </label>
                 </div>
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="ele2_estado" id="ele2_estado" value="2" >
+                    <input type="radio" name="amo2_estado" id="amo2_estado" value="2" >
                     <i class="helper"></i>Regular
                     </label>
                 </div>
                 <div class="form-check-inline my-1">
                     <label>
-                    <input type="radio" name="ele2_estado" id="ele2_estado" value="3" >
+                    <input type="radio" name="amo2_estado" id="amo2_estado" value="3" >
                     <i class="helper"></i>Malo
                     </label>
                 </div>
 
             </div>
         </div>
-        <div class="form-group row detalles{{ $errors->has('motor1') ? ' has-warning' : '' }}">
-            <label for="example-text-input" class="col-sm-4 col-form-label" for="motor1">
+        <div class="form-group row detalles{{ $errors->has('amo2') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="amo2">
                 Descripción
             </label>
 
             <div class="col-sm-8">
-                <textarea row="10" class="form-control {{ $errors->has('motor1') ? ' form-control-warning' : '' }}" type="text" id="ele2_descripcion" name="ele2_descripcion">{{old('motor1')}}</textarea>
-                @if ($errors->has('motor1'))
+                <textarea row="10" class="form-control {{ $errors->has('amo2') ? ' form-control-warning' : '' }}" type="text" id="amo2_descripcion" name="amo2_descripcion">{{old('amo2')}}</textarea>
+                @if ($errors->has('amo2'))
                     <div class="col-form-label">
-                        {{ $errors->first('motor1') }}
+                        {{ $errors->first('amo2') }}
                     </div>
                 @endif
+            </div>
+        </div>
+        <div class="form-group row detalles {{ $errors->has('amo2') ? ' has-warning' : '' }}">
+            <label for="example-text-input" class="col-sm-4 col-form-label" for="amo2_foto">
+                Foto
+            </label>
+            <div class="col-sm-8">
+                <input type="file" id="amo2_foto" class="form-control {{ $errors->has('amo2_foto') ? ' form-control-warning' : '' }}" name="amo2_foto" accept=".png, .jpg, .jpeg">
+                @if ($errors->has('amo2_foto'))
+                    <div class="col-form-label">
+                        {{ $errors->first('amo2_foto') }}
+                    </div>
+                @endif
+                <h6>Previsualización:</h6><img id="img-amo2_foto" src="/assets/images/default.jpg" style="width:120px;height:120px;" alt="Previsualización" class="img-fluid">
             </div>
         </div>
 

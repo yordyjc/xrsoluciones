@@ -7,17 +7,18 @@
       <div class="sidebar-inner slimscrollleft">
         <div id="sidebar-menu">
           <ul>
+            @if(Auth::user()->tipo == 1)
             <li class="menu-title">Plataforma</li>
             <li><a href="#" class="waves-effect"><i class="mdi mdi-airplay"></i> <span>Configuación</span></a></li>
             <li
               class="has_sub"><a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-account"></i> <span>Usuarios </span><span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-              <ul
-                class="list-unstyled">
-                <li><a href="{{url('/admin/usuarios/create')}}">Nuevo usuario</a></li>
-                <li><a href="{{url('/admin/usuarios')}}">Lista de usuarios</a></li>
-
-          </ul>
-          </li>
+                <ul
+                    class="list-unstyled">
+                    <li><a href="{{url('/admin/usuarios/create')}}">Nuevo usuario</a></li>
+                    <li><a href="{{url('/admin/usuarios')}}">Lista de usuarios</a></li>
+                </ul>
+            </li>
+            @endif
           <li class="menu-title">Administración</li>
           <li class="has_sub"><a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i> <span>Ordenes de trabajo (OT)</span><span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
             <ul
@@ -26,6 +27,7 @@
               <li><a href="{{url('/admin/ordenes')}}">Lista de OT</a></li>
               </ul>
           </li>
+          @if(Auth::user()->tipo==1)
           <li class="has_sub"><a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i> <span>Categorias de servicios</span><span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
             <ul
               class="list-unstyled">
@@ -33,6 +35,7 @@
               <li><a href="{{url('/admin/categorias')}}">Lista de categorias</a></li>
               </ul>
           </li>
+          @endif
 
           <li class="has_sub"><a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-arrow-down"></i><span> Clientes </span><span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
             <ul
